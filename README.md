@@ -19,13 +19,17 @@ The Gait Analysis gives information about possible problems in a person's knee, 
 
 ## How to run the code on your system
 
+### File Structure
+
 First ensure that app.py, script.py and templates are in the same directory. File structure should be as follows:
 
--> app.py
--> script.py
--> templates
-  -> index.html
-  -> success.html
+* app.py
+* script.py
+* templates
+  * index.html
+  * success.html
+
+### Next Steps
   
 * Install flask
 * Run app.py. It will open the frontend which you can access using the url given on the terminal.
