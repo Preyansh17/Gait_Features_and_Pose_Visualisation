@@ -12,7 +12,7 @@ def index():
 def success():  
     if request.method == 'POST':  
             video_data = request.data
-            with open('/var/www/html/videos/video.mp4', 'wb') as f:  
+            with open('/var/www/html/videos/video.mp4', 'wb') as f:  #(CHANGE) Input video file path, can change the file name as required
                 f.write(video_data)
 
             script.final()
