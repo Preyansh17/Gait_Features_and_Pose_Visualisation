@@ -188,9 +188,6 @@ def save_dict(dict1):
   filehandler = open(b"dict.obj","wb")
   pickle.dump(dict1, filehandler)
 
-"""# Video Capture"""
-
-
 
 """Find Direction"""
 
@@ -602,7 +599,7 @@ def display_features(threshold,frames,time,hipROM_print,kfa,ankle):
 def final():
 
   import skvideo.io  
-  video = "/var/www/html/videos/video.mp4"
+  video = "/var/www/html/videos/video.mp4"     #(CHANGE) Input video file path
   videodata = skvideo.io.vread(video)  
   vidcap = cv2.VideoCapture(video)
   # arr = vid_to_arr(vidcap,videodata.shape)
@@ -680,24 +677,24 @@ def final():
 
   threshold={'hip':25.6,'ankle':10.54,'knee':142}
 
-  img = cv2.imread('/root/1.png')
+  img = cv2.imread('/root/1.png')      #(CHANGE) Here /root is the parent directory of app.py, format is /parent_directory_path/1.png
   height, width, layers = img.shape
   size = (width,height)
   print(size)
 
   import pickle
-  f = open("/root/arr.pkl", "wb")
+  f = open("/root/arr.pkl", "wb")       #(CHANGE) format is /parent_directory_path/arr.pkl
   img_array = []
   for i in range(1,len(time)):
     # img_file=glob.glob("/content/"+str(i)+".png")
-    if(path.exists('/root/'+str(i)+'.png')):
-      img = cv2.imread('/root/'+str(i)+'.png')
+    if(path.exists('/root/'+str(i)+'.png')):      #(CHANGE) change /root/ with parent directory path
+      img = cv2.imread('/root/'+str(i)+'.png')    #(CHANGE) change /root/ with parent directory path
     img_array.append(img)
   pickle.dump(img_array,f)
 
   # !cp /content/arr.pkl /content/drive/MyDrive/KT
 
-  out = cv2.VideoWriter('/root/fin.mp4',cv2.VideoWriter_fourcc(*'DIVX'), 10, size)
+  out = cv2.VideoWriter('/root/fin.mp4',cv2.VideoWriter_fourcc(*'DIVX'), 10, size)             #(CHANGE) output video path instead of /root/fin.mp4 (fin.mp4 is the name of the output video file which can be changed)
   img_array=display_features(threshold,frames,time,hipROM_print,KFA_print,ankle_ROM_print)
   for i in range(len(img_array)):
       # image = np.frombuffer(comb_fig[i].canvas.tostring_rgb(), dtype='uint8')
