@@ -19,6 +19,7 @@
 
 <body>
 	    <div class="container mt-3">
+		    <!-- (CHANGE) We have to change the href to the url of the frontend, for example if your frontend is accessible from http://127.0.0.1:5000 then we have to change it to http://127.0.0.1:5000/download -->
 				<span><a href="https://f20190052-s69944sv63wrhzi8.socketxp.com/download/" style = "display :block;"><button type = "button" class = "btn btn-link ">Download</a></span>
 			    <button type="button" onclick="recordVideo()" class="btn btn-info">Start</button>
 			    <button type="button" class="btn btn-danger" id="stop" disabled>Stop</button>
@@ -97,7 +98,7 @@
 			               type: 'video/mp4'
 			           });
 	           vid =[]
-			   fetch('https://f20190052-s69944sv63wrhzi8.socketxp.com/success', {
+			   fetch('https://f20190052-s69944sv63wrhzi8.socketxp.com/success', {   <!-- (CHANGE) same as href but with /success in the end instead of /download -->
           			method: 'POST',
 					mode :"no-cors",
 					  headers: {
