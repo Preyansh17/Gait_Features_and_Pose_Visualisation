@@ -15,7 +15,7 @@ The Gait Analysis gives information about possible problems in a person's knee, 
 
 * index.html consists of the frontend code for the Flask Application which allows a user to record their video using their webcam, send it for analysis and then download the video along with the Gait Analysis.
 
-
+* success.html is just a placeholder file without any use as such other than redirection in case of failure of POST request
 
 ## How to run the code on your system
 
@@ -25,7 +25,8 @@ First ensure that app.py, script.py and templates are in the same directory. Fil
 -> script.py
 -> templates
   -> index.html
-
+  -> success.html
+  
 * Install flask
 * Run app.py. It will open the frontend which you can access using the url given on the terminal.
 * Make appropriate changes related to the file paths of the video files as well as urls in app.py, script.py and index.html. These are indicated by comments in the files
